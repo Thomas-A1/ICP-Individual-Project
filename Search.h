@@ -18,34 +18,6 @@ using namespace std;
 #ifndef C___PROJECT_SEARCH_H
 #define C___PROJECT_SEARCH_H
 
-
-//class Search {
-//    /**
-//     * Instance Variables
-//     * The SourceAirportcode as the starting point and the DestinationAirportcode as the destination
-//     */
-//private:
-//    static string SourceAirportcode;
-//    static string DestinationAirportcode;
-//
-//public:
-//    /**
-//     * Constructor for the search class
-//     */
-//    Search(string SourceAirportcode, string DestinationAirportcode);
-//    /**
-//     * A Goal test method that checks if a particular location reached
-//     * while searching through the Hashmap is the expected destination
-//     * @param location: A specific location reached
-//     */
-//     static bool goal_test(const string& location);
-//     /**
-//      * toString() method
-//      */
-//     string toString();
-//};
- //Child class extending Search class
-
 class OptimalDistance {
 private:
     static unordered_map<string, vector<vector<string>>> mymap;
@@ -76,11 +48,6 @@ public:
      */
      static vector<vector<string>> actions(const string& Sourcecode, unordered_map<string, vector<vector<string>>>record);
 };
-/**
- * Node class which implements the Comparable interface to have access to the compareTo method
- * for comparing two objects if they're the same
- */
-
     /**
      * UniformCostSearch - Search algorithm to compute the optimal distance from one source location to its destination
      * @param startcity: The city were the journey or traversal started (root)
@@ -106,10 +73,7 @@ public:
             }
             // Adding popped node to the explored set
             explored.insert(popped_node->Airportcode);
-
-            //explored.begin(), explored.end(), *popped_node;
             vector<vector<string>> actionRes = OptimalDistance::actions(popped_node->Airportcode, record);
-            cout << popped_node->Airportcode << endl;
             vector<string> costs;
             vector<string> successor;
             vector<string> stops;
@@ -122,10 +86,7 @@ public:
                 successor = actionRes[1];
                 stops = actionRes[2];
                 airline = actionRes[3];
-            // } catch(exception& nfe){
-            //     cout << "No path found to the destination" << endl;
-            //     // Write code here
-            // }
+
             for (int i = 0; i < costs.size(); i++){
                 double old_pathcost = std::stod(costs[i]) + popped_node->path_cost;
                 int stops_increment = std::stoi(stops[i]) + std::stoi(popped_node->Stops);
@@ -136,22 +97,10 @@ public:
                 auto it = find(frontier.begin(), frontier.end(), *child);
                 if((explored.find(successor[i]) == explored.end() || it == frontier.end())){
                     frontier.push_back(*child);
-                }// } else{
-                //     if (child->path_cost < old_pathcost){
-                //         child->parent = popped_node->parent;
-                //         explored.erase(child->Airportcode);
-                //         //std::remove(explored.begin(), explored.end(),(child->Airportcode));
-                //         frontier.push_back(*child);
-                //     }
-                // }
+                }
             }
-
         }
         return false;
-
-
-
     }
-
-
 #endif //C___PROJECT_SEARCH_H
+
