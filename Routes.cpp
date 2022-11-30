@@ -73,10 +73,7 @@ unordered_map<string, vector<vector<string>>> Routes ::  populateHashmap() {
         routecost.push_back(routeobjects.getDestinationAirportCode());
         routecost.push_back(to_string(routeobjects.getStops()));
         routecost.push_back(routeobjects.getAirlineCode());
-
-        // If the key is already in the hashmap, I add the values in an ArrayList of an ArrayList of strings to it (i.e. extending thr values)
-        //auto itr = find(Routemap.begin(), Routemap.end(), key);
-        // i += 1;
+        /**If Key is not found in the Routemap**/
         if (Routemap.find(key) == Routemap.end()){
             
             values.push_back(routecost);
@@ -87,22 +84,10 @@ unordered_map<string, vector<vector<string>>> Routes ::  populateHashmap() {
             values = it->second;
             values.push_back(routecost);
             Routemap[key] = values;
-           
         }
     }
-
-    // for (const auto& it : Routemap) {
-    //     cout << it.first << ": ";
-    //     for (auto & i : it.second) {
-    //         for (auto & j : i) {
-    //             cout << j << "  ";
-    //         }
-    //     }
-    //     cout << endl;
-    // }
     return Routemap;
 }
-
 
 
 
