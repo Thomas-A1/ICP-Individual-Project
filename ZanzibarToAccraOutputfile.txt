@@ -1,0 +1,8 @@
+-----THIS IS THE SOLUTION PATH TRAVELLED-----
+AF from HRE to NBO with 0 stops 
+KQ from NBO to ACC with 0 stops 
+ 
+Total Distance: 6144.6 KM
+Total number of fights: 3
+--------------------------------------------
+The optimality Criteria is the Number of flights
