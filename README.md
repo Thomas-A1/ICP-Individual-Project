@@ -1,5 +1,7 @@
 # ICP-Individual-Project in C++
+
 **HOW TO RUN THE CODE**
+
 The code can be tested by running / compiling and executing the main method (main.cpp) in the files above. Two routes were tested to find their number of stops and optimal distance in the main method (main.cpp). These routes are: 
 - From Harare, Zimbabwe to Accra, Ghana (**The output of this file is titled : HarareToAccraOutputfile.txt read from HarareToAccraInputfile.csv in the files above**)
 - From Zanzibar, Tanzania to Accra, Ghana (**The output of this file is titiled: ZanzibarToAccraOutputfile.txt read from ZanzibarToAccraInputfile.csv in the files above**)
