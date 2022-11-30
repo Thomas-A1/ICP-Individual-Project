@@ -9,23 +9,20 @@
 #include "InputFile.h"
 using namespace std;
 
-
 int main() {
     string myfilepath = R"(airlines.csv)";
-    //Readfile(myfilepath);
     RetrieveObj roj;
     roj.my_main();
-    cout << "The Airport code for Accra Ghana is: ";
-    cout << Objects::getAirportID("Accra", "Ghana") << endl;
+    cout << "Reading Routes file (67664) rows. This process might take a while, please be patient...................." << endl;
     /**
       * Populating hashmap and reading input file to obtain the source city and Destination
-      * to be passed into the Uniform cost search algorithm
-      * Description: two test cases which has different root city and destination city
+      * to be passed into the Uniform cost search algorithm. 
       */
     unordered_map<string, vector<vector<string>>> records = Routes::populateHashmap();
+    //Passing in the input file to be read
     string filelocation =  R"(ZanibaToAccraInputfile.csv)";
     vector<string> inputs = InputFile::readInput(filelocation);
-    cout << "The shortest path from " << inputs[0] << " to " << inputs[1] << " is: " << endl;
+    cout << "***READING FROM A FILE TO COMPUTE THE SHORTEST PATH FROM A SOURCE TO A DESTINATION***" << endl;
     cout << UniformCostSearch(inputs[0], inputs[1], records);
-    // cout << "The Distance Between DME and UUA is: " << Haversine::RouteDistance("DME", "UUA");
 };
+
