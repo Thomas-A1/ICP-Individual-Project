@@ -75,7 +75,6 @@ unordered_map<string, vector<vector<string>>> Routes ::  populateHashmap() {
         routecost.push_back(routeobjects.getAirlineCode());
         /**If Key is not found in the Routemap**/
         if (Routemap.find(key) == Routemap.end()){
-            
             values.push_back(routecost);
             Routemap[key] =  values;
         }
