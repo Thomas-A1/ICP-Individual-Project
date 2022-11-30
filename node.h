@@ -26,28 +26,16 @@ public:
 
 
     /**
-     * Overloading Constructor and seeting the values of the other parameter to null depending on the datatype
+     * Overloading Constructor and setting the values of the other parameter to null depending on the datatype
      * @param airportcode: The unique code that identifies an airport
      */
     node(string airportcode);
 
     /**
-     * Description: The solution path for finding the destination
-     */
-//    void solution_path(){
-//        vector<node> result;
-//        node final_node = *this;
-//        while(final_node != nullptr){
-//            result.push_back(0, final_node);
-//            final_node = final_node.parent;
-//        }
-//    }
-
-    /**
      * Description: Method that writes output into a file
      * @param result: The output from one source or root to an expected destination
      */
-    void write_to_file(vector<node> result);
+    void write_to_file(string result, double dist, int flights);
 
     string toString();
     void solution_path();
@@ -55,3 +43,4 @@ public:
 };
 
 #endif //C___PROJECT_NODE_H
+
