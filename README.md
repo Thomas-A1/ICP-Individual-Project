@@ -18,5 +18,6 @@ When the main method (main.cpp) is compiled and executed, the user is approached
 
 - *NB*: Ernest Torto's personal reflection for this project is titled "Ernest Torto Reflection", and mine (Thomas Quarshie) is titled "Final Project C++.pdf" in the files above. I bet that if you take your time to read these instructions and details, you will be able to access and even manipulate manipulates to test its efficiency or suit your future works/projects.
 
-**Thanks**
+**Thanks**,
+
 Thomas & Ernest 😊
