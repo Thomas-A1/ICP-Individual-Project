@@ -12,38 +12,6 @@
 using namespace std;
 
 
-//string Search :: SourceAirportcode;
-//string Search :: DestinationAirportcode;
-
-//Search :: Search(string SourceAirportcode, string DestinationAirportcode){
-//    Search::SourceAirportcode = std::move(SourceAirportcode);
-//    Search::DestinationAirportcode = std::move(DestinationAirportcode);
-//}
-//
-//string Search :: toString() {
-//    return "From Source to Destination: ";
-//}
-///**
-// * A Goal test method that checks if a particular location reached
-// * while searching through the Hashmap is the expected destination
-// * @param location: A specific location reached
-// */
-// bool Search ::goal_test(const string& location) {
-//     return false;
-// }
-//
-///**
-//* Actions method to return the sequence of actions taken to reach a goal
-//* @return null (for now)
-//*/
-
-// OptimalDistance::OptimalDistance(const string& sourceAirportcode, const string& destinationAirportcode,
-//                                 unordered_map<std::string, vector<vector<std::string>>> maps) {
-//    OptimalDistance::SourceAirportcode = SourceAirportcode;
-//    OptimalDistance::DestinationAirportcode = DestinationAirportcode;
-//    OptimalDistance::mymap = maps;
-// }
-
 bool OptimalDistance::goal_test(const std::string &location, const std::string &Destination) {
     return location.compare(Destination) == 0;
 }
@@ -65,14 +33,10 @@ vector<vector<string>> OptimalDistance::actions(const string& Sourcecode, unorde
     if (key_neighbours.find(Sourcecode) != key_neighbours.end()){
         vector<vector<string>> values = key_neighbours[Sourcecode];
         for (vector<string> neighbour : values){
-            // try{
                 transition_costs.push_back(neighbour[0]); 
                 successor_states.push_back(neighbour[1]);
                 Stops.push_back(neighbour[2]);
                 Airline_codes.push_back(neighbour[3]);
-            // } catch(exception& ob){
-            //     //Exception code goes here
-            // }
         }
         sequence.push_back(transition_costs);
         sequence.push_back(successor_states);
@@ -81,15 +45,9 @@ vector<vector<string>> OptimalDistance::actions(const string& Sourcecode, unorde
         return sequence;
     }
     return sequence;
-
 }
 
 
-/**
- * UniformCostSearch - Search algorithm to compute the optimal distance from one source location to its destination
- * @param startcity: The city were the journey or traversal started (root)
- * @param Destinationcity: The city were the journey or traversal ends
- * @return boolean
- */
+
 
 
