@@ -65,6 +65,7 @@ void node:: write_to_file(string result, double dist, int flights){
         myfile << dist; 
         myfile << " KM" << endl;
         myfile << "Total number of fights: " << flights << endl;
+        myfile << "--------------------------------------------" << endl;
         myfile << "The optimality Criteria is the Number of flights" << endl;
         myfile.close();
     }
@@ -73,4 +74,5 @@ void node:: write_to_file(string result, double dist, int flights){
 bool node::operator==(const node &name) const {
     return this->Airportcode == name.Airportcode;
 }
+
 
