@@ -77,17 +77,17 @@ unordered_map<string, vector<vector<string>>> Routes ::  populateHashmap() {
         // If the key is already in the hashmap, I add the values in an ArrayList of an ArrayList of strings to it (i.e. extending thr values)
         //auto itr = find(Routemap.begin(), Routemap.end(), key);
         // i += 1;
-        if (Routemap.find(key) != Routemap.end()){
-            values = Routemap[key];
-
-            // cout << "If executed " <<i << endl;
+        if (Routemap.find(key) == Routemap.end()){
+            
             values.push_back(routecost);
-            Routemap.insert({key, values});
+            Routemap[key] =  values;
         }
         else{
-            // cout << "Else executed" <<i << endl;
+            auto it = Routemap.find(key);
+            values = it->second;
             values.push_back(routecost);
-            Routemap.insert({key, values});
+            Routemap[key] = values;
+           
         }
     }
 
